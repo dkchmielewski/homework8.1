@@ -1,18 +1,23 @@
 public class Class {
-    Trainers trainer1 = new Trainers("X", "Y", 46, 20000.0);
-    Students student1 = new Students("A", "B", 33, 400.0);
-    Students student2 = new Students("C", "D", 35, 500.0);
-    public void class1() {
-        System.out.println(trainer1.toString() + student1.toString() + student2.toString());
+    private Trainer trainer;
+    private Student student1;
+    private Student student2;
+
+    public Class(Trainer trainer, Student student, Student student2) {
+        this.trainer = trainer;
+        this.student1 = student;
+        this.student2 = student2;
     }
 
     @Override
     public String toString() {
         return "Class{" +
-                "trainer1=" + trainer1 +
-                ", student1=" + student1 +
-                ", student2=" + student2 +
+                "trainer=" + trainer.getAge() + " " + trainer.getFirstName() + " " + trainer.getLastName() +
+                " " + trainer.getSalary() +
+                ", student1=" + student1.getAge() + " " + student1.getFirstName() + " " + student1.getLastName() +
+                " " + student1.getSpending() +
+                ", student2=" + student2.getAge() + " " + student2.getFirstName() + " " + student2.getLastName() +
+        " " + student2.getSpending() +
                 '}';
     }
-
 }
