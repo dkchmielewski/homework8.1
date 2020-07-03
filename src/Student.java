@@ -1,21 +1,30 @@
+import java.util.Arrays;
+
 public class Student extends Person {
-    private double spending;
-    private int grade;
+    private int id;
+    private Grade[] grades = new Grade[50];
+    private int gradeIndex = 0;
 
-    public Student(String firstName, String lastName, int age, double spending) {
+    public Student(String firstName, String lastName, int age, int id) {
         super(firstName, lastName, age);
-        this.spending = spending;
+        this.id = id;
     }
 
-    public double getSpending() {
-        return spending;
+    void addGrade(Grade grade) {
+        grades[gradeIndex] = grade;
+        gradeIndex++;
     }
 
-    public int getGrade() {
-        return grade;
+    private String gradeHistory() {
+        String history = "Grades: \n";
+        for (int i = 0; i < gradeIndex; i++) {
+            history += grades[i].getGroup().getName() + " " + grades[i].getGrade() +"\n";
+        }
+        return history;
     }
 
-    public void setGrade(int grade) {
-        this.grade = grade;
+    @Override
+    String getInfo() {
+        return super.getInfo() + ", ID number: " + id + ", " + gradeHistory();
     }
 }

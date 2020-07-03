@@ -6,7 +6,8 @@ public class Trainer extends Person {
         this.salary = salary;
     }
 
-    public double getSalary() {
-        return salary;
+    @Override
+    public String getInfo() {
+        return super.getInfo() + ", zarobki: " + salary + " PLN";
     }
 }

@@ -9,15 +9,8 @@ public class Person {
         this.age = age;
     }
 
-    public String getFirstName() {
-        return firstName;
+    String getInfo() {
+        return firstName + " " + lastName + ", wiek: " + age;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public int getAge() {
-        return age;
-    }
 }
